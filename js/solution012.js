@@ -7,16 +7,18 @@ function rot13(message){
     let alphabet = 'abcdefghijklmnopqrstuvwxyz';
     
     let rot13Message = message.split('').map(elem => {
-      if (elem === elem.toLowerCase()) {
-        let newIndex = (alphabet.indexOf(elem) + 13) % 26;
-        return alphabet[newIndex]
-        
+      if ( alphabet.includes( elem.toLowerCase() ) ) {
+        if (elem === elem.toLowerCase()) {
+          let newIndex = (alphabet.indexOf(elem) + 13) % 26;
+          return alphabet[newIndex]
+        } else {
+          let newElem = elem.toLowerCase();
+          let newIndex = (alphabet.indexOf(newElem) + 13) % 26
+          return alphabet[newIndex].toUpperCase()
+        }
       } else {
-        let newElem = elem.toLowerCase();
-        let newIndex = (alphabet.indexOf(newElem) + 13) % 26
-        return alphabet[newIndex].toUpperCase()
+        return elem
       }
-      
     })
-      return rot13Message.join('')
+    return rot13Message.join('')
   }
