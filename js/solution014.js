@@ -2,6 +2,7 @@
 
 // Note: you will always receive a valid array (string in COBOL) containing a random assortment of direction letters ('n', 's', 'e', or 'w' only). It will never give you an empty array (that's not a walk, that's standing still!).
 
+// not too shabby
 function isValidWalk(walk) {
   
   if (walk.length === 10) {
