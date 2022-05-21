@@ -11,16 +11,18 @@
 // Don't change the order of the elements that are left.
 
 function removeSmallest(numbers) {
-    // create a clone of the numbers array
-    let result = numbers.slice()
-    // order the new array
-    let orderedNumbers = result.sort((a , b) => a - b)
-    // first element (index 0) of the new sorted array should be the smallest integer
-    let lowestVal = orderedNumbers[0]
-    // find the lowest value in the original array and return the index of it
-    let removeIndex = numbers.indexOf(lowestVal)
-    // remove the one index and splice together
-    numbers.splice(removeIndex, 1)
-    return numbers
-    
-}
+    // Creates new clone of numbers array that will be returned once the smallest integer is removed
+    let result = numbers.slice();
+    // Creates a second clone of numbers that will be manipulated to find smallest integer
+    let secondNumbers = numbers.slice();
+    // sorts the clone array
+    let orderedNumbers = secondNumbers.sort((a, b) => a - b);
+    // first indexed element should be smallest integer, store in variable
+    let lowestVal = orderedNumbers[0];
+    // find the index of the lowestVal in the first clone and store in varible
+    let removeIndex = result.indexOf(lowestVal);
+    // remove splice the cloned array and remove the element at index removeIndex
+    result.splice(removeIndex, 1)
+    // return the newly spliced array
+    return result
+  }
