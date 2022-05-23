@@ -16,11 +16,16 @@
 
 function partsSums(ls) {
     let result = [];
+    // get the inital total of every elem in the given array
     let total = ls.reduce((a, b) => a + b, 0)
+    // push into new array, result
     result.push(total);
     
+    // iterate through the array
     ls.forEach(elem => {
+      // new total is elem subtracted from old total
       total -= elem;
+      // push the new total into array
       result.push(total)
     })
     return result
