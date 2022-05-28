@@ -9,5 +9,6 @@
 
 function addBinary(a,b) {
     let sum = a + b;
+    // returns sum as a string using base 2 (binary)
     return sum.toString(2);
   }
