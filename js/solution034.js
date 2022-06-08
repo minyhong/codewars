@@ -3,8 +3,8 @@
 // Not gonna lie, this is hideous code lolz
 
 function reverse(str){
-    return str.split(' ').map((elem, index) => index % 2 === 1 ? reverseString(elem) : elem).join(' ').split('   ').join('')
-  }
+    return str.split(' ').map((elem, index) => index % 2 === 1 ? reverseString(elem) : elem).join(' ').trim()
+}
                        
 function reverseString(str) {
     return str.split('').reverse().join('')
